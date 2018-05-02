@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="col-3">
+    <div class="row border" style="min-width: 700px;">
+      <div *ngFor="let section of sudoku; let i = index" class="col-4 border">
+        <div *ngFor="let row of section; let j = index" class="row">
+          <div *ngFor="let field of row; let k = index" class="col-4 d-flex justify-content-center border" style="padding: 5px">
+            <input type="text" [(ngModel)]="field.value" maxlength="1" style="width: 50px; height: 50px; text-align: center; font-size: 25px;"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<button (click)="Solve()">Solve</button>
